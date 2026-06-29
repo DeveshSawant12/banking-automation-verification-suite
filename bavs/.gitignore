@@ -1,0 +1,52 @@
+# ================================================================
+# Banking Automation & Verification Suite — .gitignore
+# ================================================================
+
+# --- Environment / secrets (NEVER commit these) ---
+.env
+*.env
+!.env.example
+
+# --- Python ---
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+.venv/
+venv/
+env/
+
+# --- ML model artifacts (large binaries, not in git) ---
+backend/ml_models/*.pkl
+backend/ml_models/*.pt
+backend/ml_models/*.meta.json
+
+# --- Training data (your private documents, not in git) ---
+backend/training_data/raw/
+backend/training_data/synthetic_tampered/
+backend/training_data/splits/
+
+# --- Knowledge base PDFs (your private policy documents) ---
+backend/knowledge_base/pdfs/
+backend/knowledge_base/faiss_index/
+
+# --- Node ---
+node_modules/
+frontend/dist/
+
+# --- IDE ---
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# --- OS ---
+.DS_Store
+Thumbs.db
+
+# --- Docker ---
+*.log

@@ -1,0 +1,105 @@
+# ============================================================
+# Module 1 dependencies (OCR Data Extraction)
+# Additional modules will append, never replace, this file.
+# ============================================================
+
+# --- Web framework ---
+fastapi==0.115.0
+uvicorn[standard]==0.30.6
+pydantic==2.9.2
+pydantic-settings==2.10.1
+
+# --- Auth (JWT + password hashing) ---
+python-jose[cryptography]==3.5.0
+bcrypt==5.0.0
+email-validator==2.3.0
+
+# --- Database ---
+sqlalchemy==2.0.35
+psycopg2-binary==2.9.9
+alembic==1.13.3
+
+# --- OCR ---
+easyocr==1.7.2
+
+# --- Image processing ---
+opencv-python-headless==4.10.0.84
+numpy==1.26.4
+Pillow==10.4.0
+
+# --- Celery + Redis (async pipeline job queue) ---
+celery[redis]==5.4.0
+
+# --- Utilities ---
+python-multipart==0.0.12
+
+# ============================================================
+# Module 2 dependencies (Aadhaar Tampering Detection)
+# ============================================================
+
+# --- Deep learning (ResNet18 frozen feature extractor) ---
+torch==2.4.1
+torchvision==0.19.1
+
+# --- Classical ML (Random Forest classifier) ---
+scikit-learn==1.5.2
+joblib==1.4.2
+
+# ============================================================
+# Module 4 dependencies (Face Verification)
+# ============================================================
+
+# --- Face detection/recognition ---
+# NOTE: deepface depends on tensorflow as its backend. If you encounter
+# import errors around tf_keras or protobuf version conflicts when
+# installing in a fresh environment, ensure tf-keras is installed
+# alongside tensorflow (deepface/retinaface require it for TF 2.16+).
+deepface==0.0.100
+tensorflow-cpu==2.18.0
+tf-keras==2.18.0
+retina-face==0.0.17
+
+# ============================================================
+# Module 5 dependencies (Cross Document Verification)
+# ============================================================
+
+# --- Fuzzy string matching ---
+rapidfuzz==3.9.7
+
+# ============================================================
+# Module 6 dependencies (Liveness Detection)
+# ============================================================
+
+# --- MediaPipe (FaceLandmarker Tasks API: blendshapes + head pose) ---
+mediapipe==0.10.33
+
+# ============================================================
+# Module 8 dependencies (Explainable AI + Cloudflare R2 storage)
+# ============================================================
+
+# --- Cloudflare R2 (S3-compatible object storage client) ---
+boto3==1.35.36
+
+# ============================================================
+# Module 10 dependencies (RAG Banking Chatbot)
+# ============================================================
+
+# --- LangChain core + community (FAISS integration) ---
+langchain==1.3.10
+langchain-community==0.4.2
+langchain-text-splitters==1.1.2
+langchain-core==1.4.8
+
+# --- FAISS vector store (CPU-only, no CUDA required) ---
+faiss-cpu==1.14.3
+
+# --- SentenceTransformers (all-MiniLM-L6-v2 embeddings) ---
+sentence-transformers==5.6.0
+
+# --- Groq LLM client ---
+groq==1.5.0
+
+# --- PDF loading (already installed as transitive dep, pinned here explicitly) ---
+pypdf==5.9.0
+
+
