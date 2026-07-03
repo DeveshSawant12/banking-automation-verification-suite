@@ -8,7 +8,7 @@ export default defineConfig({
     react(),
     tailwindcss(),
   ],
-  base: '/banking-automation-verification-suite/', // 👈 Added for GitHub Pages subfolder deployment
+ // base: '/banking-automation-verification-suite/', // 👈 Added for GitHub Pages subfolder deployment
   server: {
     proxy: {
       '/api': {
