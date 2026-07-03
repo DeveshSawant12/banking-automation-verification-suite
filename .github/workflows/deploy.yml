@@ -3,7 +3,7 @@ name: Deploy Vite App to GitHub Pages
 on:
   push:
     branches:
-      - main # Change to master if your default branch is master
+      - main
 
 permissions:
   contents: read
@@ -18,7 +18,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: bavs/frontend # 👈 Tells GitHub to look in your subfolder
+        working-directory: bavs/frontend
 
     steps:
       - name: Checkout
@@ -37,10 +37,14 @@ jobs:
       - name: Build project
         run: npm run build
 
+      # 🔍 New Step: Verify what files were actually built
+      - name: List built files
+        run: ls -la dist
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: bavs/frontend/dist # 👈 Uploads the built folder
+          path: bavs/frontend/dist
 
       - name: Deploy to GitHub Pages
         id: deployment
